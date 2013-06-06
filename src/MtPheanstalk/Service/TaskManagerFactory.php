@@ -10,18 +10,15 @@
 
 namespace MtPheanstalk\Service;
 
+use MtPheanstalk\Task\TaskManager;
 use Pheanstalk_Pheanstalk as Pheanstalk;
+use Zend\ServiceManager\Config;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 
-class PheanstalkFactory implements FactoryInterface
+class TaskManagerFactory implements FactoryInterface
 {
-    protected $defaultConfig = array(
-        'host' => '127.0.0.1',
-        'port' => Pheanstalk::DEFAULT_PORT,
-        'connect_timeout' => null,
-    );
 
     /**
      * Create service
@@ -32,10 +29,9 @@ class PheanstalkFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $appConfig = $serviceLocator->get('Configuration');
-        $options = isset($appConfig['mt_pheanstalk'], $appConfig['mt_pheanstalk']['connection']) ? array_merge(
-            $this->defaultConfig,
-            $appConfig['mt_pheanstalk']['connection']
-        ) : $this->defaultConfig;
-        return new Pheanstalk($options['host'], $options['port'], $options['connect_timeout']);
+        $options = isset($appConfig['mt_pheanstalk']['task_manager']) ?
+            $appConfig['mt_pheanstalk']['task_manager']
+         : array();
+        return new TaskManager(new Config($options));
     }
 }

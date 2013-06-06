@@ -10,8 +10,17 @@
 
 namespace MtPheanstalk\Task;
 
+use MtPheanstalk\Workload\WorkloadInterface;
 
 interface TaskInterface
 {
+    /**
+     * @param WorkloadInterface $workload
+     */
+    public function setWorkload(WorkloadInterface $workload);
 
+    /**
+     * Execute task
+     */
+    public function run();
 }

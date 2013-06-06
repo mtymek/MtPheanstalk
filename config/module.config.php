@@ -11,7 +11,9 @@
 return array(
     'service_manager' => array(
         'factories' => array(
-            'MtPheanstalk\Pheanstalk' => 'MtPheanstalk\Service\PheanstalkFactory'
+            'MtPheanstalk\Worker' => 'MtPheanstalk\Service\WorkerFactory',
+            'MtPheanstalk\Pheanstalk' => 'MtPheanstalk\Service\PheanstalkFactory',
+            'MtPheanstalk\Task\TaskManager' => 'MtPheanstalk\Service\TaskManagerFactory',
         )
     )
 );
