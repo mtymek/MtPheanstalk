@@ -21,7 +21,6 @@ class PheanstalkFactory implements FactoryInterface
         'host' => '127.0.0.1',
         'port' => Pheanstalk::DEFAULT_PORT,
         'connect_timeout' => null,
-
     );
 
     /**

@@ -24,4 +24,9 @@ class PheanstalkFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Pheanstalk_Pheanstalk', $instance);
     }
 
+    public function testServiceManagerIsInjectedWithFactory()
+    {
+        $this->assertInstanceOf('Pheanstalk_Pheanstalk', Bootstrap::getServiceManager()->get('MtPheanstalk\Pheanstalk'));
+    }
+
 }
