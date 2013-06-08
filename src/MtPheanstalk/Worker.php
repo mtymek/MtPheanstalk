@@ -31,17 +31,16 @@ class Worker
         $this->taskManager = $taskManager;
     }
 
-    public function work()
+    public function work($tubeName)
     {
         $job = $this->pheanstalk
-            ->watch('itempanel_tube')
+            ->watch($tubeName)
             ->ignore('default')
             ->reserve();
 
         $workload = unserialize($job->getData());
 
         $task = $this->taskManager->get($workload->getTaskName());
-        echo get_class($task), "\n";
         $task->setWorkload($workload);
         $task->run();
         $this->pheanstalk->delete($job);
