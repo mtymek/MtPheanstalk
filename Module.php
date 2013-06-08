@@ -10,14 +10,6 @@
 
 namespace MtPheanstalk;
 
-use Zend\Captcha\Factory as CaptchaFactory;
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
-use Zend\Mail\Transport;
-
-use Application\Form\ContactFilter;
-use Application\Form\ContactForm;
-
 class Module
 {
 

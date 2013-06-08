@@ -1,0 +1,33 @@
+{
+    "name": "mtymek/mt-pheanstalk",
+    "description": "Nice object-oriented wrapper around Beanstalkd PHP SDK.",
+    "type": "module",
+    "version": "1.0",
+    "keywords": [
+        "zf2",
+        "beanstalkd",
+        "pheanstalk",
+        "job",
+        "queue"
+    ],
+    "homepage": "https://github.com/mtymek/mt-pheanstalk",
+    "authors": [
+        {
+            "name": "Mateusz Tymek",
+            "email": "mtymek@gmail.com",
+            "homepage": "http://mateusztymek.pl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MtPheanstalk": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}

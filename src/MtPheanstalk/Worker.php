@@ -33,16 +33,17 @@ class Worker
 
     public function work()
     {
-        while (1) {
-            $job = $this->pheanstalk
-                ->watch('default')
-                ->reserve();
+        $job = $this->pheanstalk
+            ->watch('itempanel_tube')
+            ->ignore('default')
+            ->reserve();
 
-            $workload = unserialize($job->getData());
+        $workload = unserialize($job->getData());
 
-            $task = $this->taskManager->get($workload->getTaskName());
-            $task->setWorkload($workload);
-            $task->run();
-        }
+        $task = $this->taskManager->get($workload->getTaskName());
+        echo get_class($task), "\n";
+        $task->setWorkload($workload);
+        $task->run();
+        $this->pheanstalk->delete($job);
     }
 }
