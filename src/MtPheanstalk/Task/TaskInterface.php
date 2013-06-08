@@ -22,5 +22,5 @@ interface TaskInterface
     /**
      * Execute task
      */
-    public function run();
+    public function run(\Pheanstalk_Job $job);
 }

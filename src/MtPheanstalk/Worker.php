@@ -42,7 +42,7 @@ class Worker
 
         $task = $this->taskManager->get($workload->getTaskName());
         $task->setWorkload($workload);
-        $task->run();
+        $task->run($job);
         $this->pheanstalk->delete($job);
     }
 }
