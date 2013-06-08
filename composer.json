@@ -2,8 +2,7 @@
     "name": "mtymek/mt-pheanstalk",
     "description": "Nice object-oriented wrapper around Beanstalkd PHP SDK.",
     "type": "module",
-    "version": "1.0",
-    "minimum-stability": "dev",
+    "version": "1.0",    
     "keywords": [
         "zf2",
         "beanstalkd",
@@ -22,7 +21,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-        "pda/pheanstalk": "dev-master"
+        "pda/pheanstalk": "v2.1.*"
     },
     "autoload": {
         "psr-0": {
