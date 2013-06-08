@@ -21,7 +21,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-        "pda/pheanstalk": "v2.1.*"
+        "pda/pheanstalk": "2.1.*"
     },
     "autoload": {
         "psr-0": {
