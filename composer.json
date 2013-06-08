@@ -20,7 +20,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*"
+        "zendframework/zendframework": "2.*",
+        "pda/pheanstalk": "dev-master"
     },
     "autoload": {
         "psr-0": {
