@@ -3,6 +3,7 @@
     "description": "Nice object-oriented wrapper around Beanstalkd PHP SDK.",
     "type": "module",
     "version": "1.0",
+    "minimum-stability": "dev",
     "keywords": [
         "zf2",
         "beanstalkd",
