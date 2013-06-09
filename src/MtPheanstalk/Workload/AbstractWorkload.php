@@ -49,4 +49,18 @@ abstract class AbstractWorkload implements WorkloadInterface
     {
         return $this->tubeName;
     }
+
+    /**
+     * Convert workload to array, by simply returning all properties
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        $ret = array();
+        foreach ($this as $k => $v) {
+            $ret[$k] = $v;
+        }
+        return $ret;
+    }
 }
