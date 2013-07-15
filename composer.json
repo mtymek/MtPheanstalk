@@ -1,8 +1,8 @@
 {
     "name": "mtymek/mt-pheanstalk",
-    "description": "Nice object-oriented wrapper around Beanstalkd PHP SDK.",
+    "description": "Object-oriented wrapper around Beanstalkd PHP SDK.",
     "type": "module",
-    "version": "1.0",    
+    "version": "0.1",
     "keywords": [
         "zf2",
         "beanstalkd",
@@ -25,7 +25,8 @@
     },
     "autoload": {
         "psr-0": {
-            "MtPheanstalk": "src/"
+            "MtPheanstalk": "src/",
+            "MtPheanstalkTest": "test/"
         },
         "classmap": [
             "./Module.php"

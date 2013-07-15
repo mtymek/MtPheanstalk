@@ -12,29 +12,4 @@ namespace MtPheanstalk\Workload;
 
 interface WorkloadInterface
 {
-
-    /**
-     * @return string
-     */
-    public function getTaskName();
-
-    /**
-     * @param int $priority
-     */
-    public function setPriority($priority);
-
-    /**
-     * @return int
-     */
-    public function getPriority();
-
-    /**
-     * @param string $tubeName
-     */
-    public function setTubeName($tubeName);
-
-    /**
-     * @return string
-     */
-    public function getTubeName();
 }
