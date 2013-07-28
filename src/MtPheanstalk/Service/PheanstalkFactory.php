@@ -11,6 +11,7 @@
 namespace MtPheanstalk\Service;
 
 use Pheanstalk_Pheanstalk as Pheanstalk;
+use Pheanstalk_PheanstalkInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -36,6 +37,7 @@ class PheanstalkFactory implements FactoryInterface
             $this->defaultConfig,
             $appConfig['mt_pheanstalk']['connection']
         ) : $this->defaultConfig;
-        return new Pheanstalk($options['host'], $options['port'], $options['connect_timeout']);
+        $pheanstalk = new Pheanstalk($options['host'], $options['port'], $options['connect_timeout']);
+        return $pheanstalk;
     }
 }

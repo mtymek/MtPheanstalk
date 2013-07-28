@@ -12,4 +12,10 @@ namespace MtPheanstalk\Workload;
 
 interface WorkloadInterface
 {
+
+    /**
+     * @return string
+     */
+    public function getTaskName();
+
 }
